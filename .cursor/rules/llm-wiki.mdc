@@ -1,0 +1,14 @@
+---
+description: Segunda memoria YAIS-RED — el agente mantiene wiki/ y no reescribe raw/
+alwaysApply: true
+---
+
+# Segunda memoria
+
+Este repo es un LLM Wiki (Karpathy). Esquema: `AGENTS.md`. Flujos: skill `llm-wiki`.
+
+- `raw/` es inmutable. Solo se añaden fuentes nuevas en ingest.
+- `wiki/` lo escribe el agente. Diego lee, pregunta y cura.
+- Antes de responder sobre el proyecto: leer `wiki/index.md` y citar páginas.
+- No inventar producto, stack ni pitch. Huecos → `wiki/project/preguntas-abiertas.md`.
+- Operaciones: ingest / query / lint. Actualizar `wiki/index.md` y `wiki/log.md` cuando corresponda.

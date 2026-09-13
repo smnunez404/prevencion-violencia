@@ -1,0 +1,68 @@
+# Knowledge Base Index
+
+Catálogo de la segunda memoria. El agente lo lee primero en cada query.
+
+## meta
+
+Sistema de memoria y tesis viva.
+
+| Página | Resumen | Updated |
+| --- | --- | --- |
+| [Overview](meta/overview.md) | Segunda memoria para un MVP en HACKBIZ 2026. | 2026-09-12 |
+| [Síntesis](meta/synthesis.md) | Prevención ASI en primaria; motor y nombre abiertos. | 2026-09-13 |
+| [Segunda memoria](meta/segunda-memoria.md) | Contrato Diego / agente y señal de que funciona. | 2026-09-12 |
+| [LLM Wiki](meta/llm-wiki.md) | Patrón Karpathy: raw + wiki + esquema; ingest / query / lint. | 2026-09-12 |
+
+## project
+
+MVP, evento HACKBIZ y huecos de producto.
+
+| Página | Resumen | Updated |
+| --- | --- | --- |
+| [YAIS-RED](project/yais-red.md) | Nombre del equipo. Motor Roblox. | 2026-09-13 |
+| [Equipo](project/equipo.md) | Arianna (FH), Gabriel, Mauricio, Diego (FICCT). | 2026-09-13 |
+| [Plataforma preventiva ASI](project/plataforma-preventiva-asi.md) | Sesión Roblox cerrada + cara padres. | 2026-09-13 |
+| [Canvas YAIS-RED](project/canvas-yais-red.md) | B Canvas lleno; costos e ingresos en hipótesis. | 2026-09-13 |
+| [Hackathon](project/hackathon.md) | Lectura cerrada: el evento es HACKBIZ, no un producto sobre hackathones. | 2026-09-12 |
+| [HACKBIZ 2026](project/hackbiz-2026.md) | Santa Cruz, 17–18 sep; 20 equipos / 100 cupos; semilla inyectada, no efectivo. | 2026-09-12 |
+| [Capacitaciones](project/capacitaciones.md) | Lun–jue ingeridos. Faltan pitch y grabadas. | 2026-09-12 |
+| [Empleabilidad juvenil](project/empleabilidad-juvenil.md) | Eje mayoritario. No copiar a Trabajito. Autoempleo también vale. | 2026-09-12 |
+| [Dolores de empleabilidad](project/dolores-empleabilidad.md) | Informalidad 55%, muro de experiencia, referencias, burnout de CV. | 2026-09-12 |
+| [Trabajito](project/trabajito.md) | Benchmark RR. HH. (Gonzalo). +300 empresas, +180k perfiles. | 2026-09-12 |
+| [Salud mental](project/salud-mental.md) | Promoción / prevención / adhesión. Mauricio en el evento. Sin diagnóstico. | 2026-09-12 |
+| [Triple impacto](project/triple-impacto.md) | Económico + social + ambiental. Ambiental ≠ árboles. Mentores in situ. | 2026-09-12 |
+| [Canvas B](project/canvas-b.md) | Problema chico → valor → segmento → costos → métricas de impacto. | 2026-09-12 |
+| [Fundación Trabajo Empresa](project/fundacion-trabajo-empresa.md) | René Salomón. Regenera, Empodérate, computadoras verdes. | 2026-09-12 |
+| [Preselección y equipo](project/preseleccion-y-equipo.md) | 20 equipos. Cifras 270 vs 370 inscritos. CANVAS + video al 13 sep. | 2026-09-12 |
+| [Evaluación y pitch](project/evaluacion-y-pitch.md) | Rúbrica 100 pts. Pitch ≤5 min el 18 a las 15:00. | 2026-09-12 |
+| [IA responsable](project/ia-responsable.md) | Modelo de tarea, no LLM a todo. Cinco límites de Kenji. | 2026-09-12 |
+| [Reglas de IA y ética](project/reglas-ia-etica.md) | IA declarable. No diagnóstico. No entregar el demo del taller. | 2026-09-12 |
+| [MVP](project/mvp.md) | Prototipo + costo + quién paga; recorte según rúbrica. | 2026-09-12 |
+| [Problema](project/problema.md) | 6–12, ASI, sin lenguaje ni adulto de confianza real. | 2026-09-13 |
+| [Propuesta de valor](project/propuesta-valor.md) | Educar jugando + guía a padres. Colegio/ONG pagan. | 2026-09-13 |
+| [Alcance MVP](project/alcance-mvp.md) | Entra la memoria y el marco; el producto entra con eje. | 2026-09-12 |
+| [No hacer](project/no-hacer.md) | Recortes de memoria, ética y features que no se pitehean. | 2026-09-12 |
+| [Preguntas abiertas](project/preguntas-abiertas.md) | Quiz/juego adultos pendiente. Envío del 13. | 2026-09-13 |
+
+## decisions
+
+| Página | Resumen | Updated |
+| --- | --- | --- |
+| [000 — Arranque](decisions/000-arranque.md) | Se adopta LLM Wiki como segunda memoria. | 2026-09-12 |
+| [001 — Evento HACKBIZ](decisions/001-evento-hackbiz-2026.md) | Hackathon = HACKBIZ 2026, no un producto sobre hackathones. | 2026-09-12 |
+| [002 — Eje ASI](decisions/002-eje-salud-mental-asi.md) | Salud mental: prevención primaria de ASI. | 2026-09-13 |
+| [003 — Equipo y Roblox](decisions/003-equipo-motor-roblox.md) | YAIS-RED; Roblox; programan Diego y Gabriel. | 2026-09-13 |
+
+## sources
+
+| Página | Resumen | Updated |
+| --- | --- | --- |
+| [Convocatoria oficial HACKBIZ 2026](sources/convocatoria-hackbiz-2026.md) | Resumen de bases + tensiones Anexo IV/V. | 2026-09-12 |
+| [Inducción y módulo de empleabilidad](sources/induccion-y-modulo-empleabilidad.md) | Videos 1–2. | 2026-09-12 |
+| [Salud mental y triple impacto](sources/salud-mental-y-triple-impacto.md) | Clases 2–3. | 2026-09-12 |
+| [Módulo 4 — IA](sources/modulo-ia-kenji.md) | Kenji Kawaida. Demo RoBERTa; no es el producto. | 2026-09-12 |
+| [Reunión equipo ASI](sources/reunion-equipo-asi.md) | Mauri, Arianna, Gabriel. Cierra eje; no cierra motor. | 2026-09-13 |
+
+## archives
+
+Queries archivadas. Vacío.
