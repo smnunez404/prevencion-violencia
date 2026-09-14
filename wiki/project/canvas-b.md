@@ -38,3 +38,4 @@ Ejemplos que usó: pitahaya (empleo + rehabilitar suelo + precio internacional);
 - [Triple impacto](triple-impacto.md)
 - [Propuesta de valor](propuesta-valor.md)
 - [Preselección y equipo](preseleccion-y-equipo.md)
+- [Formato de presentación CANVAS](formato-presentacion-canvas.md)

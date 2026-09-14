@@ -135,3 +135,19 @@ Fuente: `raw/notes/2026-09-13-integrantes-yais-red.md`. 4 personas, mix FH + FIC
 - Updated: Síntesis
 
 Fuente: `raw/notes/2026-09-13-cara-adultos-pendiente.md`. Niños = Roblox ahora. Adultos = quiz/juego, a resolver después.
+
+## [2026-09-14] ingest | Formato de presentación CANVAS
+- Updated: Formato de presentación CANVAS (nuevo)
+- Updated: Index
+- Updated: Canvas YAIS-RED
+- Updated: Canvas B
+
+Fuente: `raw/hackathon/2026-09-14-formato-presentacion-canvas.md`. Requisitos del documento para el entregable.
+
+## [2026-09-14] query | Documentos .docx generados
+- Generado: `docgen/YAIS-RED_Canvas_HACKBIZ2026.docx` (Canvas oficial HACKBIZ 2026, 9 bloques)
+- Generado: `docgen/Gabriel_OrangeHRM_TCs.docx` (Test cases OrangeHRM, otra materia)
+- Scripts: `docgen/gen-canvas-yais-red.js`, `docgen/gen-test-cases.js`
+- Herramienta: npm + docx library (Node.js)
+
+Los documentos siguen el formato oficial: Times New Roman 12pt, interlineado 1.5, márgenes 2.54cm, alineación izquierda, sangría 5 espacios.

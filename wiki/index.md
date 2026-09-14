@@ -32,6 +32,7 @@ MVP, evento HACKBIZ y huecos de producto.
 | [Salud mental](project/salud-mental.md) | Promoción / prevención / adhesión. Mauricio en el evento. Sin diagnóstico. | 2026-09-12 |
 | [Triple impacto](project/triple-impacto.md) | Económico + social + ambiental. Ambiental ≠ árboles. Mentores in situ. | 2026-09-12 |
 | [Canvas B](project/canvas-b.md) | Problema chico → valor → segmento → costos → métricas de impacto. | 2026-09-12 |
+| [Formato de presentación CANVAS](project/formato-presentacion-canvas.md) | Estructura y formato exigido para el documento final de Ideas de Negocios. | 2026-09-14 |
 | [Fundación Trabajo Empresa](project/fundacion-trabajo-empresa.md) | René Salomón. Regenera, Empodérate, computadoras verdes. | 2026-09-12 |
 | [Preselección y equipo](project/preseleccion-y-equipo.md) | 20 equipos. Cifras 270 vs 370 inscritos. CANVAS + video al 13 sep. | 2026-09-12 |
 | [Evaluación y pitch](project/evaluacion-y-pitch.md) | Rúbrica 100 pts. Pitch ≤5 min el 18 a las 15:00. | 2026-09-12 |

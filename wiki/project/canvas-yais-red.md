@@ -97,5 +97,6 @@ Hasta validar un pagador, esto es tesis, no caja.
 ## See also
 
 - [Canvas B (plantilla)](canvas-b.md)
+- [Formato de presentación CANVAS](formato-presentacion-canvas.md)
 - [Problema](problema.md)
 - [Propuesta de valor](propuesta-valor.md)
