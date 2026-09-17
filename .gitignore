@@ -9,3 +9,7 @@ CLAUDE.md
 
 # Herramientas locales instaladas para la cadena 3D/Web.
 .tools/
+
+# Caché de Python
+__pycache__/
+*.pyc
