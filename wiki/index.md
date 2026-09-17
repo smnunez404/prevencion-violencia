@@ -19,7 +19,7 @@ MVP, evento HACKBIZ y huecos de producto.
 
 | Página | Resumen | Updated |
 | --- | --- | --- |
-| [YAIS-RED](project/yais-red.md) | Nombre del equipo. Motor Roblox. | 2026-09-13 |
+| [YAIS-RED](project/yais-red.md) | Nombre del equipo; continuidad como startup y exploración web 3D provisional. | 2026-09-17 |
 | [Equipo](project/equipo.md) | Arianna (FH), Gabriel, Mauricio, Diego (FICCT). | 2026-09-13 |
 | [Plataforma preventiva ASI](project/plataforma-preventiva-asi.md) | Sesión Roblox cerrada + cara padres. | 2026-09-13 |
 | [Canvas YAIS-RED](project/canvas-yais-red.md) | B Canvas lleno; costos e ingresos en hipótesis. | 2026-09-13 |
@@ -44,6 +44,24 @@ MVP, evento HACKBIZ y huecos de producto.
 | [Alcance MVP](project/alcance-mvp.md) | Entra la memoria y el marco; el producto entra con eje. | 2026-09-12 |
 | [No hacer](project/no-hacer.md) | Recortes de memoria, ética y features que no se pitehean. | 2026-09-12 |
 | [Preguntas abiertas](project/preguntas-abiertas.md) | Quiz/juego adultos pendiente. Envío del 13. | 2026-09-13 |
+| [Cadena técnica web 3D](project/toolchain-web-3d.md) | PlayCanvas + Blender + glTF/GLB; configuración local iniciada. | 2026-09-16 |
+| [Plan de continuidad — historia, diseño y modelo de negocio](project/plan-continuidad-historia-negocio.md) | Handoff para otra sesión: guion, niveles, evidencia, desarrollo y Canvas B pendiente. | 2026-09-17 |
+| [Panel del facilitador — plan de desarrollo](project/panel-facilitador.md) | Herramienta para docentes, 8 módulos; nunca perfila a un niño individual. | 2026-09-17 |
+
+## research
+
+Investigación con fuentes citadas, etiquetada EVIDENCIA / HIPÓTESIS / POR VALIDAR.
+
+| Página | Resumen | Updated |
+| --- | --- | --- |
+| [Canvas B — mercado y modelo de negocio](research/canvas-b-mercado-negocio.md) | Mercado, competidores, costos, Canvas B completo, riesgos, plan de validación. | 2026-09-17 |
+| [Evidencia psicológica y de protección infantil](research/evidencia-psicologica-proteccion.md) | Línea B: prevención de ASI, desarrollo infantil, ruta legal en Bolivia, privacidad, medición. | 2026-09-17 |
+
+## narrative
+
+| Página | Resumen | Updated |
+| --- | --- | --- |
+| [Guiones — La Isla de los Acuerdos](narrative/isla-de-los-acuerdos-guiones.md) | 4 episodios + cierre, matrices de decisión, puente para adultos, esquema de contenido. | 2026-09-17 |
 
 ## decisions
 
@@ -53,6 +71,7 @@ MVP, evento HACKBIZ y huecos de producto.
 | [001 — Evento HACKBIZ](decisions/001-evento-hackbiz-2026.md) | Hackathon = HACKBIZ 2026, no un producto sobre hackathones. | 2026-09-12 |
 | [002 — Eje ASI](decisions/002-eje-salud-mental-asi.md) | Salud mental: prevención primaria de ASI. | 2026-09-13 |
 | [003 — Equipo y Roblox](decisions/003-equipo-motor-roblox.md) | YAIS-RED; Roblox; programan Diego y Gabriel. | 2026-09-13 |
+| [004 — Cadena 3D web PlayCanvas + Blender](decisions/004-motor-web-3d-playcanvas-blender.md) | Decisión provisional de cadena 3D web. | 2026-09-16 |
 
 ## sources
 

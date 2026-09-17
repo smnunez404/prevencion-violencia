@@ -1,7 +1,7 @@
 ---
 title: Síntesis
 type: concept
-updated: 2026-09-13
+updated: 2026-09-17
 status: draft
 sources: Diego; HACKBIZ; reunión equipo 2026-09-13
 raw: [Reunión equipo ASI](../../raw/notes/2026-09-13-reunion-equipo-asi.md)
@@ -12,6 +12,10 @@ raw: [Reunión equipo ASI](../../raw/notes/2026-09-13-reunion-equipo-asi.md)
 Tesis actual:
 
 > El equipo **YAIS-RED** construye en HACKBIZ 2026 (Roblox, sala cerrada) una sesión de **prevención primaria de ASI**: el niño de primaria aprende jugando (límites, saludos, adulto de confianza); padres y escuela aprenden a no minimizar y a derivar. El método de aula es el de Arianna (ONG). El motor (Roblox vs web) está abierto. No se diagnostica ni se guarda el relato del niño.
+
+### Continuidad posterior
+
+Diego indica que YAIS-RED continuará como proyecto real de startup y que HACKBIZ queda como contexto histórico. La dirección de producto que se está explorando es **La Isla de los Acuerdos**, una experiencia 3D web de decisiones con antología de minijuegos; PlayCanvas + Blender + GLB es una cadena técnica provisional. Esto no reemplaza la tesis de prevención ASI ni convierte el motor en una decisión irreversible. La historia, los niveles, diálogos, evidencia psicológica, diseño de juego y modelo de negocio están pendientes de trabajo y validación. Ver [Plan de continuidad](../project/plan-continuidad-historia-negocio.md).
 
 ## Lo que ya es cierto
 
@@ -37,3 +41,4 @@ Tesis actual:
 - [Problema](../project/problema.md)
 - [Equipo](../project/equipo.md)
 - [Preguntas abiertas](../project/preguntas-abiertas.md)
+- [Plan de continuidad: historia, diseño y modelo de negocio](../project/plan-continuidad-historia-negocio.md)
