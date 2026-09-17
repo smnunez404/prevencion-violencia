@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YAIS · Visor 3D</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+<style>
+:root{color-scheme:dark}body{margin:0;background:#102b32;color:#edf5ed;font:16px/1.55 system-ui}main{max-width:1100px;margin:auto;padding:24px}a{color:#ffd277}.top{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.viewer{height:min(72vh,720px);min-height:440px;margin-top:20px;background:radial-gradient(circle at 50% 35%,#dff1e7,#86b9b5 72%);border-radius:22px;overflow:hidden}model-viewer{width:100%;height:100%;--poster-color:transparent;--progress-bar-color:#f3bd43}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.tools button{border:0;border-radius:999px;padding:11px 16px;background:#ffd277;color:#132b31;font-weight:700;cursor:pointer}.card{margin-top:18px;padding:16px 20px;border-left:3px solid #ffd277;background:#204149;border-radius:10px}.muted{color:#bfd6ce}.error{color:#ffbf9d}code{overflow-wrap:anywhere;color:#ffe19b}
+</style></head><body><main>
+<div class="top"><div><a href="index.html">← Catálogo YAIS</a><h1 id="title">Visor 3D</h1></div><a id="download" download>Descargar GLB</a></div>
+<div class="viewer"><model-viewer id="model" camera-controls touch-action="pan-y" shadow-intensity="1" exposure="1.05" camera-orbit="35deg 72deg auto" field-of-view="28deg" alt="Modelo 3D YAIS"></model-viewer></div>
+<div class="tools"><button id="front">Frente</button><button id="three">Tres cuartos</button><button id="side">Perfil</button><button id="back">Espalda</button><button id="reset">Restablecer</button></div>
+<div class="card"><strong>Cómo revisar:</strong> arrastra para girar, pellizca o usa la rueda para acercar. En teléfono puedes girarlo y usar dos dedos. Si el modelo no aparece, comprueba que el servidor esté activo y que haya conexión para cargar el componente visor.</div>
+<p id="status" class="muted">Cargando modelo…</p><p class="muted">El archivo Blender no se puede mostrar dentro del navegador: ábrelo con Blender. El GLB sí se puede inspeccionar aquí y en PlayCanvas.</p>
+</main><script>
+const params=new URLSearchParams(location.search),model=document.querySelector('#model');
+const clean=(params.get('model')||'mascot/v005/mascot.glb').replaceAll('\\','/');
+if(!/^(mascot|world|props|npc)\/v[0-9]{3}(?:\/[^/]+){1,2}\.glb$/.test(clean)){document.querySelector('#status').textContent='Ruta de modelo no válida.';document.querySelector('#status').className='error'}else{
+ const src='/assets/production/'+clean;model.src=src;const name=params.get('name')||clean.split('/').at(-1).replace('.glb','');document.querySelector('#title').textContent=name.replaceAll('_',' ');const d=document.querySelector('#download');d.href=src;d.setAttribute('download',name+'.glb');model.addEventListener('load',()=>document.querySelector('#status').textContent='Modelo cargado. Puedes girarlo y acercarlo.');model.addEventListener('error',()=>{document.querySelector('#status').textContent='No se pudo cargar este GLB. Revisa que el servidor esté activo.';document.querySelector('#status').className='error'});
+}
+function orbit(v){model.cameraOrbit=v;model.jumpCameraToGoal()}document.querySelector('#front').onclick=()=>orbit('0deg 90deg auto');document.querySelector('#three').onclick=()=>orbit('35deg 72deg auto');document.querySelector('#side').onclick=()=>orbit('90deg 90deg auto');document.querySelector('#back').onclick=()=>orbit('180deg 90deg auto');document.querySelector('#reset').onclick=()=>{model.cameraOrbit='35deg 72deg auto';model.fieldOfView='28deg';model.resetTurntableRotation()};
+</script></body></html>
