@@ -5,7 +5,11 @@ Thumbs.db
 .obsidian/workspace-mobile.json
 .obsidian/cache
 docgen/
-CLAUDE.md
+
+# Dependencias y build de la app
+node_modules/
+app/dist/
+app/node_modules/
 
 # Herramientas locales instaladas para la cadena 3D/Web.
 .tools/

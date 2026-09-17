@@ -207,3 +207,13 @@ Fuente: Arianna reportó en el equipo lo que señaló su mentora (psicóloga): e
 - Updated: Preguntas abiertas
 
 Plan completo de 8 módulos (cuentas, progreso por aula, checklist docente, protocolo de derivación a un toque, refuerzo, seguimiento agregado, panel institucional, materiales), con modelo de datos borrador sin tabla de identidad infantil y fases sugeridas. El Módulo 4 (protocolo) no se publica sin aprobación línea por línea de Arianna; quedan 4 preguntas abiertas para ella en la sección 6 del documento.
+
+## [2026-09-17] setup | Harness de desarrollo y plan de implementación
+- Added: Plan de implementación — juego y panel
+- Added: 005 — Stack visual React + R3F
+- Added: `specs/` (constitución, plantillas SDD, SPEC-001 juego, SPEC-002 panel)
+- Added: `CLAUDE.md`, `.claude/agents/`, `.claude/commands/`, `.claude/settings.json`
+- Added: `scripts/check-safety.mjs`
+- Updated: AGENTS.md (router entre modo memoria y modo desarrollo), índice
+
+Se prepara la fase de desarrollo: flujo spec-driven (`/spec` → `/plan` → `/tasks` → `/implement` → `/verify`), cuatro agentes con revisores independientes que no se autoaprueban, y las reglas de protección infantil convertidas en un script que falla el build (`check:safety`) en vez de quedar como buena intención. Stack: una sola app Vite + React + TypeScript con React Three Fiber, sin backend en esta fase. Seis sprints; los tres primeros no dependen de los assets finales. Fuente: Mauricio, 17-09-2026.

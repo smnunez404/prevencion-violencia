@@ -1,5 +1,9 @@
 # YAIS-RED — Segunda memoria (LLM Wiki)
 
+> **Dos modos.** Si la tarea es de **conocimiento** (ingest, query, lint de la wiki), sigue este archivo.
+> Si la tarea es de **desarrollo** (escribir código de la app), lee [CLAUDE.md](CLAUDE.md), [specs/constitution.md](specs/constitution.md) y [wiki/project/plan-implementacion.md](wiki/project/plan-implementacion.md).
+> Las reglas duras sobre datos de menores aplican en los dos modos, sin excepción.
+
 Esta es la segunda memoria del proyecto. No es un chatbot: es un wiki persistente que el agente mantiene y Diego dirige.
 
 Patrón: [Karpathy LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).

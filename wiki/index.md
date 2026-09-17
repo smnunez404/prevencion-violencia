@@ -47,6 +47,7 @@ MVP, evento HACKBIZ y huecos de producto.
 | [Cadena técnica web 3D](project/toolchain-web-3d.md) | PlayCanvas + Blender + glTF/GLB; configuración local iniciada. | 2026-09-16 |
 | [Plan de continuidad — historia, diseño y modelo de negocio](project/plan-continuidad-historia-negocio.md) | Handoff para otra sesión: guion, niveles, evidencia, desarrollo y Canvas B pendiente. | 2026-09-17 |
 | [Panel del facilitador — plan de desarrollo](project/panel-facilitador.md) | Herramienta para docentes, 8 módulos; nunca perfila a un niño individual. | 2026-09-17 |
+| [Plan de implementación — juego y panel](project/plan-implementacion.md) | Stack, módulos, 6 sprints, harness de agentes y definición de terminado. | 2026-09-17 |
 
 ## research
 
@@ -72,6 +73,7 @@ Investigación con fuentes citadas, etiquetada EVIDENCIA / HIPÓTESIS / POR VALI
 | [002 — Eje ASI](decisions/002-eje-salud-mental-asi.md) | Salud mental: prevención primaria de ASI. | 2026-09-13 |
 | [003 — Equipo y Roblox](decisions/003-equipo-motor-roblox.md) | YAIS-RED; Roblox; programan Diego y Gabriel. | 2026-09-13 |
 | [004 — Cadena 3D web PlayCanvas + Blender](decisions/004-motor-web-3d-playcanvas-blender.md) | Decisión provisional de cadena 3D web. | 2026-09-16 |
+| [005 — Stack visual React + R3F](decisions/005-stack-visual-react-r3f.md) | Una sola app React para juego y panel; supera el motor de 004. | 2026-09-17 |
 
 ## sources
 
