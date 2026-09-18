@@ -28,7 +28,7 @@ El guion completo ya existe en [guiones, §1](../../wiki/narrative/isla-de-los-a
 - Episodios 2, 3, 4 y cierre.
 - Minijuegos de clasificación (van en SPEC-004).
 - Backend, base de datos, cuentas.
-- Animaciones de rig (los assets aún no tienen rig; se usan poses estáticas).
+- Clips adicionales y rig facial. Ya existe una primera pasada de rig con `Idle`, `Walk`/`Roll`, `Wave`, `Listen` y `TalkGesture`; los gestos narrativos sin clip propio usan un mapa de fallback documentado.
 - Audio locutado (se deja el enganche, se llena después).
 
 ## Criterios de aceptación (EARS)
@@ -69,3 +69,9 @@ El guion completo ya existe en [guiones, §1](../../wiki/narrative/isla-de-los-a
 
 - [ ] ¿La escena de Don Beto (adulto conocido que insiste con un abrazo) entra en este slice o se deja fuera hasta que Arianna la valide? — decide Arianna.
 - [ ] ¿El distintivo de "borrador" incomoda en la demo a jurados? Alternativa: visible en pantalla de inicio y no durante el juego. — decide el equipo.
+
+## Aclaración de implementación, 2026-09-17
+
+El JSON vigente contiene siete escenas, cuatro minijuegos y tipos de nodo adicionales a los cuatro del primer runtime. La primera prueba visible se limita al núcleo de saludo con Capi y Tomi; el resto permanece versionado y se incorpora por tareas posteriores. El modo de desarrollo puede iniciar desde una escena concreta, pero esa entrada no forma parte de la experiencia publicada.
+
+Aunque el JSON declara varios flags candidatos, este vertical slice solo puede persistir `ep01.completed`, tal como exige AC-5. Las decisiones y el resto de estados se mantienen en memoria. Cambiar esta política exige actualizar la spec y pasar revisión del modelo de datos.

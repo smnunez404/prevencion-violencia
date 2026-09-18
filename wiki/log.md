@@ -217,3 +217,30 @@ Plan completo de 8 módulos (cuentas, progreso por aula, checklist docente, prot
 - Updated: AGENTS.md (router entre modo memoria y modo desarrollo), índice
 
 Se prepara la fase de desarrollo: flujo spec-driven (`/spec` → `/plan` → `/tasks` → `/implement` → `/verify`), cuatro agentes con revisores independientes que no se autoaprueban, y las reglas de protección infantil convertidas en un script que falla el build (`check:safety`) en vez de quedar como buena intención. Stack: una sola app Vite + React + TypeScript con React Three Fiber, sin backend en esta fase. Seis sprints; los tres primeros no dependen de los assets finales. Fuente: Mauricio, 17-09-2026.
+
+## [2026-09-17] producción | Primera pasada de rigs y animaciones
+- Updated: Plan de continuidad — estado técnico e integración con decisión 005.
+- Updated: índice y `PRODUCCION-3D.md`.
+- Artefactos: `assets/production/animated/v001/` y scripts de producción reproducibles.
+
+Por pedido de Diego se preparan 5 rigs y 25 clips sin abrir Blender, preservando los originales. Reimportación GLB y validación binaria superadas; 31.134.044 bytes en el conjunto. No se declara optimización móvil ni app terminada. Se documentan articulaciones, cara/dedos, colisiones, navegación y compuertas de aplicación pendientes. No se añadieron datos de menores, narrativa ni decisiones de negocio.
+
+## [2026-09-17] plan | Implementación inmediata y optimización móvil
+- Updated: Plan de implementación — juego y panel
+- Updated: Síntesis
+
+Se fija como recomendación de continuidad integrar ahora `animated/v001` en un vertical slice visible y ejecutar la optimización móvil en paralelo como compuerta de ingeniería. El código puede resolver carga diferida, calidad adaptativa, culling, sombras y fallback sin alterar el arte; retopología, LOD, compresión y reducción de materiales crearán variantes nuevas con Blender headless/herramientas glTF cuando las mediciones lo justifiquen.
+
+## [2026-09-17] handoff | Repositorio de código y arranque con Claude
+
+- Added: 006 — Repositorio de código separado del vault.
+- Added: Handoff de desarrollo para Claude.
+- Added: `specs/001-juego-episodio-1/plan.md` y `tasks.md` ejecutables.
+- Updated: SPEC-001, síntesis, YAIS-RED, plan de continuidad, plan de implementación, inventario de assets e índice.
+- Target: `C:\Users\qwert\Documents\yais-game-hackbiz`.
+
+Se fija el primer hito en web para laptop/proyector: saludo de Capi y Tomi, runtime 2D accesible y mejora progresiva R3F. La optimización móvil y el pulido del rig se difieren. No se necesitan nuevas imágenes raster para comenzar; los iconos faltantes serán SVG accesibles. Los assets y documentos necesarios se copian al repositorio de código sin eliminar los originales ni `raw/` del vault.
+
+## [2026-09-17] lint | 0 issues, 0 auto-fixed
+
+Se comprobaron los enlaces Markdown relativos bajo `wiki/` después del handoff. No se encontraron destinos rotos. Las contradicciones históricas de motor se conservan mediante las decisiones 004 → 005, y la separación vault/código queda en 006.

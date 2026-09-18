@@ -11,7 +11,7 @@ const server=http.createServer((req,res)=>{
   // links to the real assets/production tree.
   let virtual=pathname;
   if(pathname==='/')virtual='/assets/production/index.html';
-  else if(pathname==='/index.html'||pathname==='/viewer.html'||pathname.startsWith('/mascot/')||pathname.startsWith('/world/')||pathname.startsWith('/props/')||pathname.startsWith('/npc/'))virtual='/assets/production'+pathname;
+  else if(pathname==='/index.html'||pathname==='/viewer.html'||pathname.startsWith('/mascot/')||pathname.startsWith('/world/')||pathname.startsWith('/props/')||pathname.startsWith('/npc/')||pathname.startsWith('/animated/'))virtual='/assets/production'+pathname;
   else if(pathname.startsWith('/references-3d/'))virtual='/assets/references-3d'+pathname.slice('/references-3d'.length);
   else if(pathname==='/PRODUCCION-3D.md')virtual=pathname;
   const allowed=virtual.startsWith('/assets/production/')||virtual.startsWith('/assets/references-3d/')||virtual==='/PRODUCCION-3D.md';

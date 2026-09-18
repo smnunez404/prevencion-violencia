@@ -287,9 +287,12 @@ def activate(rig,name):
 def snapshot(rig):
     bpy.context.view_layer.update();dg=bpy.context.evaluated_depsgraph_get();data={}
     for o in bpy.context.scene.objects:
-        if o.type!='MESH':continue
+        # The glTF importer creates a hidden unit-size bone display mesh.
+        # Only exported, skinned geometry belongs in deformation measurements.
+        if o.type!='MESH' or not any(m.type=='ARMATURE' and m.object==rig for m in o.modifiers):continue
         e=o.evaluated_get(dg);m=e.to_mesh()
         data[o.name]=[e.matrix_world@v.co for v in m.vertices];e.to_mesh_clear()
+    assert data,'No skinned character geometry found'
     return data
 
 def verify(id):

@@ -81,6 +81,47 @@ La frontera de `engine/` es la decisión de arquitectura más importante: si la 
 
 Los módulos P6–P8 y el detalle completo de los 8 módulos están en [Panel del facilitador](panel-facilitador.md).
 
+## 4 bis. Rendimiento: escritorio primero, móvil diferido
+
+Por decisión de Diego del 2026-09-17, el primer vertical slice se presenta en **web para laptop/proyector**. La optimización móvil no es una compuerta de esta implementación. Se puede comenzar con `assets/production/animated/v001/`: es una primera pasada utilizable para demostrar el producto, no la entrega móvil final. El GLB aprobado se conserva como **fuente** y las variantes móviles se crearán después, cuando existan mediciones y un teléfono objetivo.
+
+### Prácticas baratas que sí se mantienen desde ahora
+
+- Cargar únicamente la escena y los personajes activos; no importar los cinco NPC al inicio.
+- Aplicar carga diferida del GLB, precargar solo el siguiente recurso y liberar la escena anterior.
+- Limitar `devicePixelRatio`, usar sombras simples o desactivadas, una luz principal, sin postprocesado y cámara con distancias razonables.
+- Renderizar bajo demanda cuando la escena está quieta; actualizar animación con el mixer, no con estado React en cada frame.
+- Usar la geometría actual para escritorio/demo y dejar el contrato preparado para una variante ligera futura.
+- Instanciar elementos repetidos del escenario y activar culling; evitar cargar props que no estén en la toma.
+- Mantener fallback 2D/estático y controles táctiles grandes.
+
+Estas medidas son principalmente decisiones sanas de carga y render, no una campaña de optimización móvil. No cambian la forma artística de los modelos.
+
+### Qué sí puede requerir pipeline de Blender o herramientas de assets
+
+- Reducir triángulos y piezas de pelo mediante retopología/decimación controlada.
+- Reducir primitivas/materiales y sustituir geometría pequeña por textura/normal map.
+- Crear LOD y variantes GLB; comprimir mallas/animaciones y texturas con herramientas compatibles con el cargador.
+- Limpiar pesos, contactos y claves redundantes de animación.
+
+No hace falta abrir la interfaz de Blender: Blender puede ejecutarse headless y las herramientas de glTF pueden automatizarse. Pero estas operaciones sí pueden cambiar el binario, el peso y ocasionalmente el aspecto; por eso se harán en una versión nueva (`animated/v002`), conservando v001 y comparando renders.
+
+### Datos que fijan la prioridad
+
+La primera pasada tiene 31,13 MB de GLB, 625.722 triángulos y 82 primitivas de material; la capibara sola pesa 16,41 MB. Es demasiado pronto para llamarla optimizada para móvil. El episodio inicial debe probarse con una composición mínima: capibara + un NPC + solo los props visibles. En esta fase se mide en la PC/proyector de la demo; la compuerta móvil se abre en una fase posterior y con un teléfono objetivo.
+
+### Secuencia revisada
+
+1. **S0:** crear app Vite/React/TypeScript, motor de contenido, registro de assets y pruebas.
+2. **S1:** hacer jugable el Episodio 1 en 2D con datos JSON y controles accesibles.
+3. **S2:** integrar la isla, capibara y un NPC real con GLB; añadir carga diferida y fallback desde el comienzo.
+4. **S3:** completar el panel del facilitador y el debrief agregado.
+5. **S4:** conectar los cuatro minijuegos, props y elenco restante.
+6. **S5 posterior:** medir en dispositivos móviles objetivo, generar variantes ligeras y corregir cuellos de botella; no declarar rendimiento por estimación.
+7. **Después:** pulido de articulaciones, manos/cara y rig facial, salvo que una deformación impida mostrar una escena.
+
+Así el producto se puede ver y validar antes de terminar el arte técnico, pero la arquitectura no queda atada a los GLB pesados actuales.
+
 ## 5. Sprints
 
 Una semana cada uno, con demo al cierre. **Los sprints 0 a 2 no dependen de los assets finales**: se trabaja contra placeholders del registro de assets y se cambian por los reales cuando Diego los entregue.

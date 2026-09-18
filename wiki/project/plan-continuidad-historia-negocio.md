@@ -21,7 +21,7 @@ No cierra decisiones nuevas. Todo lo que diga «propuesta», «candidato» o «i
 - Eje vigente: salud mental entendida como promoción/prevención primaria; no es diagnóstico, terapia ni sustituto de profesionales. Ver [Salud mental](salud-mental.md) y [Decisión 002](../decisions/002-eje-salud-mental-asi.md).
 - Concepto visual en curso: **La Isla de los Acuerdos**, una antología de minijuegos con mascota propia, no un mundo abierto. La estética 3D aprobada por Diego corresponde a la entrega anterior; los cuatro NPC nuevos quedan para revisión artística.
 - Núcleo de minijuegos ya bocetado: «saludo que puedo elegir», «mi círculo de 3», «secreto que pesa vs sorpresa» y «a quién le cuento».
-- Cadena técnica provisional actual: PlayCanvas + Blender + glTF/GLB. Blender puede ejecutarse headless; el juego web no necesita Blender en tiempo de ejecución. Ver [Cadena técnica web 3D](toolchain-web-3d.md).
+- Cadena técnica: la [decisión 005](../decisions/005-stack-visual-react-r3f.md) actualiza PlayCanvas a React + R3F/drei para la aplicación. Blender headless + glTF/GLB siguen siendo la cadena de assets; el juego web no necesita Blender en tiempo de ejecución. La [cadena técnica web 3D](toolchain-web-3d.md) conserva el antecedente de PlayCanvas.
 - Modelo de negocio: **pendiente de investigación y definición**. No inventar pagador, precio, métricas ni sostenibilidad como hechos.
 
 La memoria histórica todavía conserva el contexto de HACKBIZ 2026, Roblox y una sesión cerrada. La dirección web 3D es posterior y provisional; si el equipo decide que YAIS-RED deja de ser solo un entregable de hackathon, documentar esa decisión aparte y no borrar el historial.
@@ -34,10 +34,11 @@ La entrada de revisión está en [catálogo de producción](../../assets/product
 - Mundo/arquitectura: 20 piezas estáticas.
 - Props: 20 piezas estáticas.
 - NPC: niño explorador v001; niña en silla de ruedas, educadora y guía comunitario v002; cada uno tiene BLEND, GLB, cuatro vistas, galería y ficha.
-- Todo lo anterior sigue sin retopología móvil definitiva, LOD, rig, pesos, clips de animación y colisiones integradas en PlayCanvas.
-- La niña tiene partes separadas de la silla para poder preparar después ruedas, silla y personaje como sistemas coordinados.
+- Actualización técnica, 2026-09-17: primera pasada de rig y pesos para la mascota y los cuatro NPC en `assets/production/animated/v001/`. 25 clips: reposo, caminar/rodar, saludo, escucha y gesto de conversación. La silla incluye huesos para asiento/estructura y ruedas. Los originales estáticos se conservan.
+- [Manifiesto verificable](../../assets/production/animated/v001/manifest.json) y [galería animada](../../assets/production/animated/v001/index.html). Son GLB con movimiento real, no ilustraciones. Reimportación y comprobación de binarios superadas; no es aprobación final de deformaciones ni de rendimiento.
+- Pendiente: retopología móvil definitiva, articulaciones, dedos y cara, LOD, compresión, transiciones de motor y colisiones/navegación. El conjunto animado pesa 31,13 MB sin comprimir; no cargar todo simultáneamente ni afirmar que está optimizado para aula/móvil. Receta, comandos y restricciones en [PRODUCCION-3D.md](../../PRODUCCION-3D.md#punto-vigente--rigs-y-animaciones-2026-09-17).
 
-La siguiente sesión no debe rehacer el arte 3D ni afirmar que está listo para producción móvil. Puede trabajar en paralelo sobre documentación, guion y datos narrativos.
+La siguiente sesión no debe rehacer el arte 3D ni afirmar que está listo para producción móvil. Puede integrar los rigs actuales en el vertical slice y trabajar en paralelo sobre documentación, guion y datos narrativos. El código se desarrolla en `C:\Users\qwert\Documents\yais-game-hackbiz`; el vault YAIS-RED conserva la memoria y los originales.
 
 ## Línea de trabajo A — historia y arco de aprendizaje
 
@@ -186,12 +187,12 @@ El agente de programación puede trabajar con contenido ficticio y datos estruct
 1. definir el vertical slice de un solo episodio;
 2. escribir guion, estados, decisiones, feedback y debrief en una tabla o JSON versionable;
 3. separar contenido, localización, audio y lógica;
-4. definir el contrato de datos que PlayCanvas leerá;
+4. definir el contrato de datos que el runtime React/R3F leerá;
 5. montar una escena gris con botones táctiles y accesibilidad;
 6. medir carga y controles en un teléfono objetivo;
-7. conectar modelos temporales solo después de que el flujo sea jugable;
-8. integrar arte estático;
-9. añadir rig/animaciones;
+7. conectar el subconjunto real de assets solo después de que el flujo sea jugable;
+8. integrar los fallbacks 2D y el mundo mínimo;
+9. integrar los rigs y cinco clips existentes mediante un mapa explícito de intenciones;
 10. probar con facilitadores antes de pruebas infantiles formales.
 
 Entregables útiles para esa sesión:

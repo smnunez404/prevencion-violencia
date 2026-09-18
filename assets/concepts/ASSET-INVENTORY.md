@@ -1,6 +1,6 @@
 # Inventario de assets — La Isla de los Acuerdos
 
-Estado: **dirección visual aprobada / preparación de producción pendiente**.
+Estado: **dirección visual aprobada / primera pasada de producción y rigs disponible / pulido pendiente**.
 
 Las láminas PNG aprobadas son concept art compuesto. No deben usarse directamente como una sola pantalla del juego: contienen fondos, UI, personajes y texto fusionados. El siguiente paso es reconstruir esos elementos como capas independientes, manteniendo la misma identidad visual.
 
@@ -16,7 +16,8 @@ El paquete completo está en [references-3d](../references-3d/README.md). Incluy
 - [x] UI 3D de decisiones, progreso y accesibilidad.
 - [x] Referencias 3D de las áreas social, prevención, ambiente y habilidades para la vida.
 - [ ] Revisión y aprobación final de la hoja de estilo medible.
-- [ ] Convertir referencias en modelos GLB, rig y animaciones.
+- [x] Convertir la primera selección en modelos GLB con rig y cinco clips por personaje.
+- [ ] Pulir deformaciones, manos/cara, LOD, compresión y validar rendimiento en dispositivo.
 
 ## A. Dirección visual
 
@@ -77,6 +78,8 @@ El paquete completo está en [references-3d](../references-3d/README.md). Incluy
 - Guía breve para adulto.
 - Ajustes de audio, subtítulos y tamaño de texto.
 - [ ] Crear componentes UI separados, no recortar botones desde una captura.
+
+Para el primer vertical slice no se requieren nuevos raster ni recortes. Los iconos faltantes se construirán como componentes SVG accesibles; las láminas compuestas permanecen como referencia y no se servirán como UI final.
 
 ## F. Audio y accesibilidad
 

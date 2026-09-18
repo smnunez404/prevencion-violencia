@@ -9,7 +9,7 @@ Sistema de memoria y tesis viva.
 | Página | Resumen | Updated |
 | --- | --- | --- |
 | [Overview](meta/overview.md) | Segunda memoria para un MVP en HACKBIZ 2026. | 2026-09-12 |
-| [Síntesis](meta/synthesis.md) | Prevención ASI en primaria; motor y nombre abiertos. | 2026-09-13 |
+| [Síntesis](meta/synthesis.md) | Prevención ASI en primaria; primer vertical slice web React/R3F y código separado del vault. | 2026-09-17 |
 | [Segunda memoria](meta/segunda-memoria.md) | Contrato Diego / agente y señal de que funciona. | 2026-09-12 |
 | [LLM Wiki](meta/llm-wiki.md) | Patrón Karpathy: raw + wiki + esquema; ingest / query / lint. | 2026-09-12 |
 
@@ -45,9 +45,10 @@ MVP, evento HACKBIZ y huecos de producto.
 | [No hacer](project/no-hacer.md) | Recortes de memoria, ética y features que no se pitehean. | 2026-09-12 |
 | [Preguntas abiertas](project/preguntas-abiertas.md) | Quiz/juego adultos pendiente. Envío del 13. | 2026-09-13 |
 | [Cadena técnica web 3D](project/toolchain-web-3d.md) | PlayCanvas + Blender + glTF/GLB; configuración local iniciada. | 2026-09-16 |
-| [Plan de continuidad — historia, diseño y modelo de negocio](project/plan-continuidad-historia-negocio.md) | Handoff para otra sesión: guion, niveles, evidencia, desarrollo y Canvas B pendiente. | 2026-09-17 |
+| [Plan de continuidad — historia, diseño y modelo de negocio](project/plan-continuidad-historia-negocio.md) | Handoff de guion, negocio y desarrollo; 5 rigs / 25 clips de primera pasada, optimización pendiente. | 2026-09-17 |
 | [Panel del facilitador — plan de desarrollo](project/panel-facilitador.md) | Herramienta para docentes, 8 módulos; nunca perfila a un niño individual. | 2026-09-17 |
 | [Plan de implementación — juego y panel](project/plan-implementacion.md) | Stack, módulos, 6 sprints, harness de agentes y definición de terminado. | 2026-09-17 |
+| [Handoff de desarrollo para Claude](project/handoff-desarrollo-claude.md) | Rutas, primer vertical slice, assets, reglas y orden ejecutable para el repositorio de código. | 2026-09-17 |
 
 ## research
 
@@ -74,6 +75,7 @@ Investigación con fuentes citadas, etiquetada EVIDENCIA / HIPÓTESIS / POR VALI
 | [003 — Equipo y Roblox](decisions/003-equipo-motor-roblox.md) | YAIS-RED; Roblox; programan Diego y Gabriel. | 2026-09-13 |
 | [004 — Cadena 3D web PlayCanvas + Blender](decisions/004-motor-web-3d-playcanvas-blender.md) | Decisión provisional de cadena 3D web. | 2026-09-16 |
 | [005 — Stack visual React + R3F](decisions/005-stack-visual-react-r3f.md) | Una sola app React para juego y panel; supera el motor de 004. | 2026-09-17 |
+| [006 — Repositorio de código separado](decisions/006-repositorio-codigo-separado.md) | Código en yais-game-hackbiz; vault YAIS-RED conserva memoria y originales. | 2026-09-17 |
 
 ## sources
 

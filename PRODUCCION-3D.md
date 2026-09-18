@@ -16,13 +16,13 @@ No hay presupuesto numérico de tokens fijado. Controlamos alcance con etapas pe
 | --- | --- | --- | --- |
 | 01 | Mascota estática v001, materiales y cuatro vistas | Revisar silueta, cara, mochila y similitud | Descartada visualmente por Diego: no se parece a la referencia |
 | 02 | Correcciones de mascota y geometría preparada para deformación | Sin intersecciones visibles; forma aceptada | Fidelidad artística v005 aprobada; topología de deformación pendiente |
-| 03 | Rig, pesos y pruebas de articulaciones | Hombros, caderas y cara deforman bien | Pendiente |
-| 04 | Idle y caminar; luego correr y gestos en entregas separadas | Clips exportados y reproducibles | Pendiente |
+| 03 | Rig, pesos y pruebas de articulaciones | Hombros, caderas y cara deforman bien | Primera pasada en 5 personajes; pulido de articulaciones y cara pendiente |
+| 04 | Idle y caminar; luego correr y gestos en entregas separadas | Clips exportados y reproducibles | 25 clips en animated/v001; correr y transiciones pendientes |
 | 05 | Terreno, senderos, rocas y vegetación | Escala, encaje y colisiones verificadas | Modelos estáticos world/v001 generados; integración de colisiones pendiente |
 | 06 | Puente; casa; faro, un objeto por entrega | Vistas y módulos coherentes | Puentes, casa y faro generados en world/v001; sin interiores ni animaciones |
 | 07 | Props por familias: mochila/tokens, decisiones, ambiente | Pivotes y estados interactivos | 20 modelos estáticos props/v001 generados; estados y lógica pendientes |
-| 08 | Cuatro NPCs, procesados individualmente; después rig y clips | Consistencia y deformaciones | Cuatro modelos estáticos, BLEND/GLB y 16 vistas generados; revisión artística nueva y rig pendientes |
-| 09 | Escena PlayCanvas, cámara y controles móviles | Probar en teléfono objetivo | Pendiente |
+| 08 | Cuatro NPCs, procesados individualmente; después rig y clips | Consistencia y deformaciones | Estáticos conservados; primera pasada de rig y cinco clips por NPC; pulido pendiente |
+| 09 | Escena web, cámara y controles móviles | Probar en teléfono objetivo | Pendiente; stack de app actualizado a React/R3F por decisión 005 |
 | 10 | Episodios narrativos, uno por entrega | Decisiones, feedback, accesibilidad | Pendiente |
 
 ## Etapa 01
@@ -37,7 +37,38 @@ La v001 es una maqueta de forma con piezas separadas, sin rig, animaciones ni co
 
 ## Reanudación
 
-### Punto vigente tras «continúa generando los demás»
+### Punto vigente — rigs y animaciones, 2026-09-17
+
+Diego autorizó avanzar con rig y clips. Primera pasada en `assets/production/animated/v001/`, independiente de los originales estáticos: capibara v005 y cuatro NPC vigentes conservados. No sustituye la aprobación artística ni representa retopología final.
+
+- **5 esqueletos de deformación / 25 clips**: `Idle`, `Walk` (o `Roll` para la silla), `Wave`, `Listen`, `TalkGesture`.
+- 17 huesos por personaje; 22 para la niña, con silla, ruedas principales y delanteras articuladas. Una malla de autoría por personaje; siguen existiendo 12–20 primitivas de material, NO un único draw call.
+- Pesos normalizados, máximo 3 influencias por vértice. Se conservan materiales, colores por vértice y triángulos de las versiones estáticas.
+- Exportación GLB con skin y clips; `.blend` editable con acciones y pistas NLA. En Blender las pistas se guardan silenciadas para mostrar reposo: activar UNA pista para revisar, no todas a la vez.
+- **31.134.044 bytes** de GLB en el conjunto: capibara 16.412.600; explorador 2.049.840; silla 5.737.816; educadora 2.607.540; guía 4.326.248. Sin compresión, LOD ni rendimiento móvil/aula validado. Cargar solo el personaje necesario.
+- `verification.json` por personaje: reimportación real de GLB, movimiento, continuidad inicio/final, coordenadas finitas y altura de suelo en cinco muestras por clip. NO comprueba todas las intersecciones ni todos los fotogramas.
+- `manifest.json`: comprobación binaria independiente de skins, índices, pesos, posiciones y clips; SHA-256 de fuentes y entregables; duración real de exportación. El exportador conserva el primer key en 1/30 s, de modo que el runtime tiene ~0,033 s adicionales respecto de la duración de autoría: usar el manifiesto, no asumir duración redonda.
+
+Revisar en `assets/production/animated/v001/index.html`, con dos renders por personaje y enlace al visor. Este permite seleccionar clip, reproducir/pausar, velocidad y búsqueda temporal; empieza pausado y se pausa al ocultar la pestaña. La carga del componente visor depende de Google CDN; hay imagen estática alternativa. Los GLB permanecen locales.
+
+Reanudación segura, secuencial, sin interfaz Blender y con dos hilos:
+
+```powershell
+& ./scripts/production/run-rigs.ps1 -Render
+& ./.tools/node-v22.23.2-win-x64/node.exe scripts/production/verify-rigs.cjs
+& ./.tools/node-v22.23.2-win-x64/node.exe scripts/production/rig-gallery.cjs
+& ./scripts/production/start-preview.ps1
+```
+
+Para un personaje: `-Character mascot` (o identificador NPC). El runner omite los builds completos y renders existentes, vuelve a verificar, y se detiene si hay salida parcial. Para cambiar geometría/animación crear versión nueva, nunca sobrescribir v001. El script de receta es `scripts/production/rig-characters.py`.
+
+**Integración:** el stack de aplicación vigente está en [decisión 005](wiki/decisions/005-stack-visual-react-r3f.md): React + R3F/drei. Las menciones PlayCanvas en secciones inferiores son históricas. GLB es independiente del motor. El futuro registro `app/src/shared/assets.ts` debe apuntar a las versiones animadas; no se ha creado aquí la app ni modificado la narrativa. Usar `Idle` por defecto; reproducir un gesto y volver a reposo mediante el mixer del motor. Los clips exportados permiten bucle, pero un saludo no debe repetirse indefinidamente en el juego. Posicionar la entidad desde código; todos los clips son **in-place**, sin root motion. `manifest.json` incluye distancia y duración de locomoción para sincronizar desplazamiento; las velocidades son de revisión lenta, no velocidad final de juego. No reutilizar animaciones de un personaje en otro sin retargeting: los esqueletos comparten nombres, no proporciones ni matrices de reposo.
+
+**Pendientes concretos:** retopología y pulido de pliegues/uniones en hombros/caderas; apertura de manos y dedos (las manos conservan el agarre estático); rig facial, parpadeos y lipsync; correr; transiciones; contactos de manos/aro de silla; bake del pelo, materiales/LOD/compresión; colisiones y navegación; pruebas en dispositivo real. Los límites de suelo numéricos no sustituyen revisión artística de postura.
+
+**Compuerta de aplicación pendiente:** todavía no existen `package.json` ni `app/package.json`; por tanto no puede ejecutarse `npm run verify`. Las pruebas de producción de assets no sustituyen typecheck/lint/test/build/check:safety de la futura app ni su revisión independiente de accesibilidad/rendimiento.
+
+### Histórico — punto tras «continúa generando los demás»
 
 Histórico de reanudación: el usuario pidió terminar las afinaciones y después seguir con los demás assets. En ese momento se había completado la pasada de mascota v005 y todavía no se daba aprobación artística. **Actualización posterior (2026-09-17):** Diego aprobó la fidelidad artística de la entrega anterior y se generó el lote de NPC; no se creó un rig provisional sobre la malla densa.
 
